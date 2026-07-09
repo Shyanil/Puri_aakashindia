@@ -1,6 +1,4 @@
 import rathyatraBanner from '../assets/aakash-india/rathyatra-banner.webp';
-import riveraFront from '../assets/aakash-india/rivera-front.webp';
-import poolCam from '../assets/aakash-india/pool-cam-2.webp';
 import logo from '../assets/aakash-india/aakash-india-logo-color.webp';
 
 const AboutSections = () => {
@@ -69,46 +67,6 @@ const AboutSections = () => {
                 <h2 className="headingH1">A Sanctuary of Peace and Serenity</h2>
                 <p>
                   Every day here is a blessing. Experience a life of comfort and tranquility where the gentle coastal breeze meets spiritual harmony, keeping you connected to your family and a peaceful everyday rhythm.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* USP 2 */}
-          <div className="textImgDiv">
-            <div className="imgDiv">
-              <img
-                src={riveraFront}
-                className="img-fluid"
-                alt="A family with grandparents performing aarti and giving Khaja prasad to kids."
-                title="परम्परा | PARAMPARA & संस्कार | SANSKARA"
-              />
-            </div>
-            <div className="textDiv">
-              <div className="ourPromiseTextDiv ContentText">
-                <h2 className="headingH1">परम्परा | PARAMPARA & संस्कार | SANSKARA</h2>
-                <p>
-                  Traditions are the memories of a civilisation, passed gently from one generation to another. From aarti to prasad, every ritual becomes a reminder of what we carry, what we cherish, and what truly lives on.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* USP 3 */}
-          <div className="textImgDiv">
-            <div className="imgDiv">
-              <img
-                src={poolCam}
-                className="img-fluid"
-                alt="Grandparents and kids building sandcastles at the beach while a young couple watches with love."
-                title="संगम | SANGAMA"
-              />
-            </div>
-            <div className="textDiv">
-              <div className="ourPromiseTextDiv ContentText">
-                <h2 className="headingH1">संगम | SANGAMA</h2>
-                <p>
-                  Where the sea, the sacred, and your story become one. A place where childhood, family, devotion, and quiet moments come together to create a life filled with meaning, memory, and love.
                 </p>
               </div>
             </div>
