@@ -9,7 +9,7 @@ const SectionNav = () => {
         <div className='row'>
           <ul>
             <li>
-              <a href='#about' className={activeTab === 'about' ? 'active' : ''} onClick={() => setActiveTab('about')}>About</a>
+              <a href='https://aakashindia.in/upcoming-project/' className={activeTab === 'about' ? 'active' : ''} onClick={() => setActiveTab('about')}>About</a>
             </li>
             <li>
               <a href='#location' className={activeTab === 'location' ? 'active' : ''} onClick={() => setActiveTab('location')}>Location</a>
