@@ -4,10 +4,10 @@ const Breadcrumb = () => {
       <div className="container">
         <ul>
           <li>
-            <a href="https://www.lodhagroup.com/"> Home </a>
+            <a href="https://aakashindia.in/"> Home </a>
           </li>
           <li>
-            <a href="https://www.lodhagroup.com/all-projects"> Residential Projects </a>
+            <a href="https://aakashindia.in/portfolio/"> Projects </a>
           </li>
           <li>Aakash India</li>
         </ul>

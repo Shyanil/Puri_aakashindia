@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import webIcons from '../assets/lodha-alibaug/Web-Icons.webp';
+import callIcon from '../assets/lodha-alibaug/call.svg';
 
 const locationHighlights = [
   { icon: '~', title: 'Sea-kissed serenity.', text: 'Beach, sea shells, and a calmer everyday rhythm.' },
@@ -8,24 +7,18 @@ const locationHighlights = [
   { icon: 'K', title: 'Joyful traditions.', text: 'Celebrating Puri through the sweetness of Khaja.' },
 ];
 
-const connectivityData = [
-  { name: 'Puri Beach', time: 'Coastal calm' },
-  { name: 'Shree Jagannath Temple', time: 'Spiritual landmark' },
-  { name: 'Odissi Heritage', time: 'Cultural rhythm' },
-  { name: 'Khaja Traditions', time: 'Local sweetness' },
+const connectivityTimes = [
+  { time: '5 mins', place: 'Shree Shree Omkareshwar Temple' },
+  { time: '16 mins', place: 'Jagannath Temple' },
+  { time: '16 mins', place: 'Sun Temple' },
+  { time: '4 mins', place: 'Muhana Beach' },
+  { time: '10 mins', place: 'Swargadwar Sea Beach' },
+  { time: '14 mins', place: 'Puri Sea Beach' },
+  { time: '5 mins', place: 'Sunrise View Point' },
+  { time: '7 mins', place: 'New Marine Drive Road' },
 ];
 
-const mapSrc = 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3754.108795709179!2d85.78886!3d19.792984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDQ3JzM0LjciTiA4NcKwNDcnMTkuOSJF!5e0!3m2!1sen!2sin!4v1783504613985!5m2!1sen!2sin';
-
 const LocationSection = () => {
-  const [showMore, setShowMore] = useState(false);
-  const [mapOpen, setMapOpen] = useState(false);
-
-  const openMap = (event) => {
-    event.preventDefault();
-    setMapOpen(true);
-  };
-
   return (
     <section className="lifeStyleSec bgColorGrey exploreSec" id="location">
       <div className="container">
@@ -48,87 +41,73 @@ const LocationSection = () => {
 
         <div className="row">
           <div className="textListDiv">
-            <div className="ContentText">
-              <h2 className="headingH1">Aakash India | Puri</h2>
-              <p>
-                Your new address brings coastal calm, spiritual comfort, local art, and joyful traditions together in Puri.
-              </p>
-              <div className="mNone" style={{ marginTop: 24 }}>
-                <a href="#location-map" className="goldenBorderBtn" onClick={openMap}>
-                  View Location
+            {/* Left Side: Heading, Description, Connectivity Times, Call Us CTA */}
+            <div className="ContentText" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              <div>
+                <h2 className="headingH1" style={{ marginBottom: '10px' }}>Aakash India | Puri</h2>
+                <p style={{ fontSize: '15px', color: 'var(--color-lodha-text-light)', lineHeight: '1.6' }}>
+                  Your new address brings coastal calm, spiritual comfort, local art, and joyful traditions together in Puri.
+                </p>
+              </div>
+
+              <div className="connectivityListDiv">
+                <div className="connectivityList">
+                  {connectivityTimes.map((item, idx) => (
+                    <div className="connectivityCard" key={idx}>
+                      <span className="placeName">{item.place}</span>
+                      <strong className="timeText">{item.time}</strong>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <a
+                  href="tel:7859055648"
+                  className="goldenBorderBtn"
+                  style={{
+                    marginTop: '10px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                  }}
+                >
+                  <img
+                    src={callIcon}
+                    alt="Call"
+                    style={{ width: '16px', height: '16px', filter: 'brightness(0)' }}
+                    className="ctaCallIcon"
+                  />
+                  Call Us
                 </a>
               </div>
             </div>
-            <div className="listDiv">
-              <ul>
-                {connectivityData.map((item, index) => (
-                  <li key={index} className="loadData">
-                    <div>
-                      <img
-                        src={webIcons}
-                        alt={item.name}
-                        className="img-fluid"
-                        loading="lazy"
-                        width="24"
-                        height="24"
-                      />
-                      <p>
-                        {item.name}
-                        <strong>{item.time}</strong>
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <div style={{ display: 'flex', paddingTop: 16, justifyContent: 'flex-start' }}>
-                <a
-                  href="javascript:void(0);"
-                  className="goldenLineBtn"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setShowMore(!showMore);
-                  }}
-                >
-                  {showMore ? 'View Less' : 'View More'}
-                </a>
-              </div>
-              <div
-                className="m-flex-important"
-                style={{
-                  display: 'none',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  gap: 16,
-                  width: '100%',
-                  marginTop: 32,
-                }}
-              >
-                <a href="#location-map" className="goldenBorderBtn" onClick={openMap}>
-                  View Location
-                </a>
-              </div>
+
+            {/* Right Side: Embedded Google Map */}
+            <div
+              className="mapDiv"
+              style={{
+                flex: 1,
+                minHeight: '380px',
+                border: '1px solid #e0e0e0',
+                borderRadius: '4px',
+                overflow: 'hidden',
+              }}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3754.108795709179!2d85.78886!3d19.792984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDQ3JzM0LjciTiA4NcKwNDcnMTkuOSJF!5e0!3m2!1sen!2sin!4v1783580646268!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: '380px', display: 'block' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="Aakash India Location Map"
+              />
             </div>
           </div>
         </div>
       </div>
-
-      {mapOpen && (
-        <div className="mapModalOverlay" role="dialog" aria-modal="true" aria-label="Aakash India location map">
-          <div className="mapModal">
-            <button className="mapModalClose" type="button" aria-label="Close map" onClick={() => setMapOpen(false)}>
-              X
-            </button>
-            <iframe
-              id="location-map"
-              src={mapSrc}
-              title="Aakash India location map"
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          </div>
-        </div>
-      )}
     </section>
   );
 };

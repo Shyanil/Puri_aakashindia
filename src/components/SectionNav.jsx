@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const SectionNav = ({ onEnquireClick }) => {
+const SectionNav = () => {
   const [activeTab, setActiveTab] = useState('about');
 
   return (
@@ -17,7 +17,7 @@ const SectionNav = ({ onEnquireClick }) => {
           </ul>
           <ul className='mNone'>
             <li>
-              <a href='javascript:void(0);' className='enquireForm' onClick={onEnquireClick}>Enquire</a>
+              <a href='tel:7859055648' className='enquireForm'>Call Us: 7859055648</a>
             </li>
           </ul>
         </div>

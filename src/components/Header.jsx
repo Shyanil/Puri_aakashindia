@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react';
 import logo from '../assets/aakash-india/aakash-india-logo-white.webp';
-import searchIcon from '../assets/lodha-alibaug/search.svg';
-import enquireIcon from '../assets/lodha-alibaug/enquire.svg';
 import callIcon from '../assets/lodha-alibaug/call.svg';
-import chatIcon from '../assets/lodha-alibaug/chat.svg';
 import closeIcon from '../assets/lodha-alibaug/close.svg';
 
-const Header = ({ onEnquireClick }) => {
+const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -47,40 +44,15 @@ const Header = ({ onEnquireClick }) => {
             {/* Desktop Nav + Action Buttons */}
             <div className="linksDiv">
               <ul className="linksUl">
-                <li><a href="https://www.lodhagroup.com/our-story">Our Story</a></li>
-                <li><a href="/esg-sustainablity-environmental-social-governance">Our Impact</a></li>
-                <li><a href="javascript:void(0);">Our Projects</a></li>
+                <li><a href="https://aakashindia.in/about-us/">About us</a></li>
+                <li><a href="https://aakashindia.in/portfolio/">Projects</a></li>
               </ul>
 
               <ul className="staticlinksUl">
                 <li>
-                  <a
-                    href="#enquire"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      onEnquireClick?.();
-                    }}
-                  >
-                    <img src={enquireIcon} alt="Enquire" />
-                    Enquire
-                  </a>
-                </li>
-                <li>
-                  <a href="javascript:void(0);">
+                  <a href="tel:7859055648" className="headerCtaBtn">
                     <img src={callIcon} alt="Call" />
-                    Call
-                  </a>
-                </li>
-                <li>
-                  <a href="#chat">
-                    <img src={chatIcon} alt="chat" />
-                    chat
-                  </a>
-                </li>
-                <li>
-                  <a href="#search">
-                    <img src={searchIcon} alt="Search" />
-                    Search
+                    7859055648
                   </a>
                 </li>
               </ul>
@@ -88,11 +60,13 @@ const Header = ({ onEnquireClick }) => {
 
             {/* Mobile Menu Controls */}
             <div className="mobMenu">
-              <img
-                src={searchIcon}
-                alt="Search"
-                className="mobSearch"
-              />
+              <a href="tel:7859055648" className="mobCallLink" aria-label="Call 7859055648">
+                <img
+                  src={callIcon}
+                  alt="Call"
+                  className="mobCallIcon"
+                />
+              </a>
               <div
                 className="burgerMenu"
                 onClick={() => setMobileMenuOpen(true)}
@@ -116,40 +90,19 @@ const Header = ({ onEnquireClick }) => {
         />
         <ul>
           <li>
-            <a href="https://www.lodhagroup.com/our-story" onClick={() => setMobileMenuOpen(false)}>
-              Our Story
+            <a href="https://aakashindia.in/about-us/" onClick={() => setMobileMenuOpen(false)}>
+              About us
             </a>
           </li>
           <li>
-            <a href="/esg-sustainablity-environmental-social-governance" onClick={() => setMobileMenuOpen(false)}>
-              Our Impact
+            <a href="https://aakashindia.in/portfolio/" onClick={() => setMobileMenuOpen(false)}>
+              Projects
             </a>
           </li>
-          <li>
-            <a href="javascript:void(0);" onClick={() => setMobileMenuOpen(false)}>
-              Our Projects
-            </a>
-          </li>
-          <li>
-            <a
-              href="#enquire"
-              onClick={(e) => {
-                e.preventDefault();
-                setMobileMenuOpen(false);
-                onEnquireClick?.();
-              }}
-            >
-              Enquire
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0);" onClick={() => setMobileMenuOpen(false)}>
-              Call
-            </a>
-          </li>
-          <li>
-            <a href="#chat" onClick={() => setMobileMenuOpen(false)}>
-              chat
+          <li className="mobileMenuCallLi">
+            <a href="tel:7859055648" className="headerCtaBtn" onClick={() => setMobileMenuOpen(false)}>
+              <img src={callIcon} alt="Call" />
+              7859055648
             </a>
           </li>
         </ul>
@@ -159,3 +112,4 @@ const Header = ({ onEnquireClick }) => {
 };
 
 export default Header;
+
