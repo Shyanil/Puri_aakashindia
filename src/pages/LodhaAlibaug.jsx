@@ -5,7 +5,7 @@ import SectionNav from '../components/SectionNav';
 import AboutSections from '../components/AboutSections';
 import LocationSection from '../components/LocationSection';
 import PuriLifestyle from '../components/PuriLifestyle';
-import FinestDevelopments from '../components/FinestDevelopments';
+// import FinestDevelopments from '../components/FinestDevelopments';
 import Breadcrumb from '../components/Breadcrumb';
 import EnquiryForm from '../components/EnquiryForm';
 import Footer from '../components/Footer';
@@ -26,7 +26,7 @@ const LodhaAlibaug = () => {
         <AboutSections />
         <LocationSection />
         <PuriLifestyle />
-        <FinestDevelopments />
+        {/* <FinestDevelopments /> */}
         <Breadcrumb />
         <EnquiryForm isOpen={enquiryOpen} onClose={closeEnquiry} />
         <StickyMobileFooter onEnquireClick={openEnquiry} />
