@@ -61,14 +61,14 @@ const AboutSections = () => {
                 src={rathyatraBanner}
                 className="img-fluid"
                 alt="Jagannath temple with a fluttering flag. A family with kids standing next to the temple."
-                title="अनुग्रह | ANUGRAHA & सान्निध्य | SANNIDHYA"
+                title="A Sanctuary of Peace and Serenity"
               />
             </div>
             <div className="textDiv">
               <div className="ourPromiseTextDiv ContentText">
-                <h2 className="headingH1">अनुग्रह | ANUGRAHA & सान्निध्य | SANNIDHYA</h2>
+                <h2 className="headingH1">A Sanctuary of Peace and Serenity</h2>
                 <p>
-                  Every blessing has a way of finding you. To live close to the divine is a blessing in itself. A life where faith feels near, family feels rooted, and every day begins with the sacred presence of Lord Jagannath.
+                  Every day here is a blessing. Experience a life of comfort and tranquility where the gentle coastal breeze meets spiritual harmony, keeping you connected to your family and a peaceful everyday rhythm.
                 </p>
               </div>
             </div>
