@@ -1,12 +1,5 @@
 import callIcon from '../assets/lodha-alibaug/call.svg';
 
-const locationHighlights = [
-  { icon: '~', title: 'Sea-kissed serenity.', text: 'Beach, sea shells, and a calmer everyday rhythm.' },
-  { icon: 'J', title: 'Soulful spirituality.', text: 'Close to the sacred spirit of Lord Jagannath.' },
-  { icon: 'O', title: 'Timeless artistry.', text: 'Inspired by the grace and heritage of Odissi dance.' },
-  { icon: 'K', title: 'Joyful traditions.', text: 'Celebrating Puri through the sweetness of Khaja.' },
-];
-
 const connectivityTimes = [
   { time: '5 mins', place: 'Shree Shree Omkareshwar Temple' },
   { time: '16 mins', place: 'Jagannath Temple' },
@@ -22,23 +15,6 @@ const LocationSection = () => {
   return (
     <section className="lifeStyleSec bgColorGrey exploreSec" id="location">
       <div className="container">
-        <div className="row">
-          <div className="locationIntro ContentText text-center">
-            <h2 className="headingH1">Aakash India | Puri</h2>
-            <p>Your New Address</p>
-          </div>
-        </div>
-
-        <div className="locationHighlights" aria-label="Puri lifestyle highlights">
-          {locationHighlights.map((item) => (
-            <div className="locationHighlight" key={item.title}>
-              <span className="locationHighlightIcon" aria-hidden="true">{item.icon}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </div>
-          ))}
-        </div>
-
         <div className="row">
           <div className="textListDiv">
             {/* Left Side: Heading, Description, Connectivity Times, Call Us CTA */}
