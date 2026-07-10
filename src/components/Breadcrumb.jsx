@@ -7,9 +7,9 @@ const Breadcrumb = () => {
             <a href="https://aakashindia.in/"> Home </a>
           </li>
           <li>
-            <a href="https://aakashindia.in/portfolio/"> Projects </a>
+            <a href="https://aakashindia.in/upcoming-project/"> Upcoming project </a>
           </li>
-          <li>Aakash India</li>
+          <li>Puri</li>
         </ul>
       </div>
     </div>
