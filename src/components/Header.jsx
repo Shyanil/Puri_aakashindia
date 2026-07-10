@@ -3,7 +3,7 @@ import logo from '../assets/aakash-india/aakash-india-logo-white.webp';
 import callIcon from '../assets/lodha-alibaug/call.svg';
 import closeIcon from '../assets/lodha-alibaug/close.svg';
 
-const Header = () => {
+const Header = ({ onEnquireClick }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -25,6 +25,11 @@ const Header = () => {
       document.body.style.overflow = '';
     };
   }, [mobileMenuOpen]);
+
+  const handleEnquireClick = () => {
+    setMobileMenuOpen(false);
+    onEnquireClick?.();
+  };
 
   return (
     <>
@@ -49,6 +54,11 @@ const Header = () => {
               </ul>
 
               <ul className="staticlinksUl">
+                <li>
+                  <button type="button" className="headerCtaBtn headerEnquireBtn" onClick={handleEnquireClick}>
+                    Enquire Now
+                  </button>
+                </li>
                 <li>
                   <a href="tel:7859055648" className="headerCtaBtn">
                     <img src={callIcon} alt="Call" />
@@ -100,6 +110,11 @@ const Header = () => {
             </a>
           </li>
           <li className="mobileMenuCallLi">
+            <button type="button" className="headerCtaBtn headerEnquireBtn" onClick={handleEnquireClick}>
+              Enquire Now
+            </button>
+          </li>
+          <li className="mobileMenuCallLi">
             <a href="tel:7859055648" className="headerCtaBtn" onClick={() => setMobileMenuOpen(false)}>
               <img src={callIcon} alt="Call" />
               7859055648
@@ -112,4 +127,3 @@ const Header = () => {
 };
 
 export default Header;
-

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import callIcon from '../assets/lodha-alibaug/call.svg';
 
-const StickyMobileFooter = () => {
+const StickyMobileFooter = ({ onEnquireClick }) => {
   const [footerVisible, setFooterVisible] = useState(false);
 
   useEffect(() => {
@@ -27,10 +26,9 @@ const StickyMobileFooter = () => {
     <div className={`stickyHeader ${footerVisible ? 'is-hidden' : ''}`}>
       <ul className="staticlinksUl">
         <li>
-          <a href="tel:7859055648" aria-label="Call 7859055648">
-            <img src={callIcon} alt="" className="img-fluid" loading="lazy" width="18" height="18" />
-            Call 7859055648
-          </a>
+          <button type="button" className="stickyEnquireBtn" onClick={onEnquireClick}>
+            Enquire Now
+          </button>
         </li>
       </ul>
     </div>
