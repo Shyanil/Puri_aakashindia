@@ -29,7 +29,7 @@ const LodhaAlibaug = () => {
         {/* <FinestDevelopments /> */}
         <Breadcrumb />
         <EnquiryForm isOpen={enquiryOpen} onClose={closeEnquiry} />
-        <StickyMobileFooter onEnquireClick={openEnquiry} />
+        <StickyMobileFooter />
       </main>
       <Footer />
     </>
