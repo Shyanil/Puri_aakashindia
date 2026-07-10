@@ -1531,7 +1531,7 @@ footer .container {
 
 /* Puri Lifestyle Sections */
 .puriLifestyleSec {
-  padding: 80px 0;
+  padding: 64px 0;
   background: #fff;
 }
 
@@ -1541,15 +1541,16 @@ footer .container {
   padding: 0 24px;
 }
 
+.lifestyleRows {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
 .lifestyleRow {
   display: flex;
   align-items: center;
   gap: 60px;
-  margin-bottom: 80px;
-}
-
-.lifestyleRow:last-child {
-  margin-bottom: 0;
 }
 
 .lifestyleRow.even-row {
@@ -1560,58 +1561,21 @@ footer .container {
   flex-direction: row-reverse;
 }
 
-.lifestyleImgPlaceholder {
+.lifestyleImgWrap {
   flex: 1;
   min-width: 290px;
-  aspect-ratio: 16 / 10;
-  background: rgba(184, 134, 11, 0.02);
-  border: 1px dashed rgba(184, 134, 11, 0.25);
+  aspect-ratio: 295 / 148;
   border-radius: 6px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  text-align: center;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: inset 0 0 20px rgba(184, 134, 11, 0.01);
+  overflow: hidden;
+  background: rgba(184, 134, 11, 0.04);
+  box-shadow: 0 12px 30px rgba(23, 23, 23, 0.08);
 }
 
-.lifestyleImgPlaceholder:hover {
-  border-color: var(--color-lodha-gold);
-  background: rgba(184, 134, 11, 0.05);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(184, 134, 11, 0.06);
-}
-
-.lifestyleImgPlaceholder svg {
-  margin-bottom: 12px;
-  opacity: 0.7;
-  transition: transform 0.3s ease;
-}
-
-.lifestyleImgPlaceholder:hover svg {
-  transform: scale(1.08);
-}
-
-.lifestyleImgPlaceholder .box-title {
-  font-family: var(--font-jost);
-  font-size: 11px;
-  color: var(--color-lodha-gold);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 0 0 6px 0;
-}
-
-.lifestyleImgPlaceholder .box-desc {
-  font-family: var(--font-cormorant);
-  font-size: 17px;
-  line-height: 1.5;
-  color: var(--color-lodha-text-light);
-  font-style: italic;
-  margin: 0;
-  max-width: 380px;
+.lifestyleImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .lifestyleTextCol {
@@ -1648,9 +1612,12 @@ footer .container {
 }
 
 @media (max-width: 991px) {
+  .lifestyleRows {
+    gap: 32px;
+  }
+
   .lifestyleRow {
     gap: 40px;
-    margin-bottom: 60px;
   }
   
   .lifestyleTextCol .section-title {
@@ -1659,12 +1626,16 @@ footer .container {
 }
 
 @media (max-width: 767px) {
+  .lifestyleRows {
+    gap: 28px;
+  }
+
   .lifestyleRow.even-row,
   .lifestyleRow.odd-row {
     flex-direction: column !important;
   }
   
-  .lifestyleImgPlaceholder {
+  .lifestyleImgWrap {
     width: 100%;
     aspect-ratio: 1.5;
   }
