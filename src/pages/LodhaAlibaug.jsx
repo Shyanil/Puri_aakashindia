@@ -4,6 +4,8 @@ import Hero from '../components/Hero';
 import SectionNav from '../components/SectionNav';
 import AboutSections from '../components/AboutSections';
 import LocationSection from '../components/LocationSection';
+import LandingEnquiryForm from '../components/LandingEnquiryForm';
+import FloatingWhatsApp from '../components/FloatingWhatsApp';
 // import FinestDevelopments from '../components/FinestDevelopments';
 import Breadcrumb from '../components/Breadcrumb';
 import EnquiryForm from '../components/EnquiryForm';
@@ -22,12 +24,14 @@ const LodhaAlibaug = () => {
       <main>
         <Hero />
         <SectionNav />
-        <AboutSections />
+        <AboutSections onEnquireClick={openEnquiry} />
         <LocationSection />
+        <LandingEnquiryForm />
         {/* <FinestDevelopments /> */}
         <Breadcrumb />
         <EnquiryForm isOpen={enquiryOpen} onClose={closeEnquiry} />
         <StickyMobileFooter onEnquireClick={openEnquiry} />
+        <FloatingWhatsApp />
       </main>
       <Footer />
     </>
@@ -35,4 +39,3 @@ const LodhaAlibaug = () => {
 };
 
 export default LodhaAlibaug;
-

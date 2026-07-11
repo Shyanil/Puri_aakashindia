@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { submitEnquiry } from '../utils/submitEnquiry';
 
-const EnquiryForm = ({ isOpen, onClose }) => {
+const LandingEnquiryForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -22,10 +22,9 @@ const EnquiryForm = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
 
     try {
-      await submitEnquiry({ ...formData, source: 'Popup Enquiry Form' });
+      await submitEnquiry({ ...formData, source: 'Landing Page Inline Form' });
       alert('Thank you for your enquiry!');
       setFormData({ name: '', phone: '', whatsappOptIn: false });
-      onClose();
     } catch {
       alert('Something went wrong. Please try again.');
     } finally {
@@ -34,18 +33,14 @@ const EnquiryForm = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className={`enquirePopupWrapper ${isOpen ? 'show' : ''}`}>
-      <div className="popupContent">
-        <button className="closed" type="button" aria-label="Close enquiry form" onClick={onClose}>
-          X
-        </button>
-        <div className="getInTouchForm">
-          <div className="ContentText" style={{ textAlign: 'center' }}>
-            <h2 className="headingH1" style={{ color: '#c9a84c' }}>
-              Request a call back
-            </h2>
+    <section className="landingEnquirySec" id="enquire">
+      <div className="container">
+        <div className="landingEnquiryWrap">
+          <div className="landingEnquiryText">
+            <span className="section-label">Enquire Now</span>
+            <h2 className="headingH1">Request a call back</h2>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form className="landingEnquiryForm" onSubmit={handleSubmit}>
             <div className="formControls">
               <input
                 type="text"
@@ -73,21 +68,21 @@ const EnquiryForm = ({ isOpen, onClose }) => {
             <div className="formControlsCheck whatsappOptIn">
               <input
                 type="checkbox"
-                id="popup-whatsapp-opt-in"
+                id="landing-whatsapp-opt-in"
                 name="whatsappOptIn"
                 checked={formData.whatsappOptIn}
                 onChange={handleChange}
               />
-              <label htmlFor="popup-whatsapp-opt-in">Send updates on WhatsApp</label>
+              <label htmlFor="landing-whatsapp-opt-in">Send updates on WhatsApp</label>
             </div>
-            <button type="submit" className="submitBtn" disabled={isSubmitting}>
+            <button type="submit" className="submitBtn landingSubmitBtn" disabled={isSubmitting}>
               {isSubmitting ? 'Submitting...' : 'Enquire Now'}
             </button>
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default EnquiryForm;
+export default LandingEnquiryForm;

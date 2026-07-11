@@ -1,7 +1,7 @@
 import rathyatraBanner from '../assets/aakash-india/rathyatra-banner.webp';
 import logo from '../assets/aakash-india/aakash-india-logo-color.webp';
 
-const AboutSections = () => {
+const AboutSections = ({ onEnquireClick }) => {
   return (
     <section className="ourStorySec" id="about">
       <div className="container">
@@ -91,6 +91,19 @@ const AboutSections = () => {
                   </svg>
                 </div>
                 <span>11,419 SQ.M. Green Cover</span>
+              </div>
+            </div>
+
+            <div className="aboutEarlyAccess">
+              <span className="aboutEarlyEyebrow">Early Access Now Live</span>
+              <p>Limited Units at Pre-Launch Pricing</p>
+              <div className="aboutEarlyActions">
+                <button type="button" className="aboutEarlyAccessBtn" onClick={onEnquireClick}>
+                  Enquire Now
+                </button>
+                <a href="tel:7859055648" className="aboutEarlyCallBtn">
+                  Call Us
+                </a>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 
 const Hero = () => {
   const videoRef = useRef(null);
+  const heroVideoSrc = `${import.meta.env.BASE_URL}assets/hero-video.mp4`;
 
   useEffect(() => {
     const video = videoRef.current;
@@ -49,7 +50,7 @@ const Hero = () => {
       <video
         ref={videoRef}
         className='heroVideoFrame'
-        src='/assets/hero-video.mp4'
+        src={heroVideoSrc}
         autoPlay
         loop
         playsInline

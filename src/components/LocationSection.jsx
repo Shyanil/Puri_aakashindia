@@ -40,7 +40,7 @@ const LocationSection = () => {
               <div>
                 <a
                   href="tel:7859055648"
-                  className="goldenBorderBtn"
+                  className="goldenBorderBtn blackCallBtn"
                   style={{
                     marginTop: '10px',
                     display: 'inline-flex',
@@ -51,7 +51,7 @@ const LocationSection = () => {
                   <img
                     src={callIcon}
                     alt="Call"
-                    style={{ width: '16px', height: '16px', filter: 'brightness(0)' }}
+                    style={{ width: '16px', height: '16px' }}
                     className="ctaCallIcon"
                   />
                   Call Us

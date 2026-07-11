@@ -83,10 +83,15 @@ img {
 }
 
 .brandLogo img {
+
   height: 58px;
+
   width: auto;
+
   max-width: 220px;
+
   object-fit: contain;
+
 }
 
 .linksDiv {
@@ -165,21 +170,40 @@ img {
   opacity: 1 !important;
 }
 
+
+
 .headerEnquireBtn {
+
   background: #000;
+
   border-color: #000;
+
   color: #fff !important;
+
   font-family: var(--font-jost);
+
   font-size: 13px;
+
   letter-spacing: 0.5px;
+
   cursor: pointer;
+
 }
 
+
+
 .headerEnquireBtn:hover {
+
   background: #fff;
+
   border-color: #fff;
+
   color: #000 !important;
+
 }
+
+
+
 
 
 .mobCallLink {
@@ -385,6 +409,77 @@ img {
   color: var(--color-lodha-dark);
   letter-spacing: 0.3px;
 }
+.aboutEarlyAccess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 34px auto 0;
+  padding: 24px 28px;
+  max-width: 680px;
+  border: 1px solid rgba(26, 26, 26, 0.12);
+  background: #fff;
+}
+
+.aboutEarlyEyebrow {
+  font-family: var(--font-jost);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--color-lodha-gold);
+}
+
+.aboutEarlyAccess p {
+  margin: 0;
+  font-family: var(--font-cormorant);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-lodha-dark);
+}
+
+.aboutEarlyActions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.aboutEarlyAccessBtn,
+.aboutEarlyCallBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  padding: 12px 22px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  font-family: var(--font-jost);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.aboutEarlyAccessBtn {
+  background: #000;
+  color: #fff;
+}
+
+.aboutEarlyCallBtn {
+  background: #fff;
+  color: #000;
+}
+
+.aboutEarlyAccessBtn:hover,
+.aboutEarlyCallBtn:hover {
+  background: var(--color-lodha-gold);
+  border-color: var(--color-lodha-gold);
+  color: #fff;
+}
 
 @media (max-width: 576px) {
   .about-stats-container {
@@ -445,7 +540,9 @@ img {
 }
 
 .evenRow .textImgDiv:nth-child(even) {
+
   flex-direction: row-reverse;
+
 }
 
 /* Location Section */
@@ -550,6 +647,25 @@ img {
 
 .goldenBorderBtn:hover .ctaCallIcon {
   filter: brightness(0) invert(1) !important;
+}
+.blackCallBtn {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.blackCallBtn .ctaCallIcon {
+  filter: brightness(0) invert(1);
+}
+
+.blackCallBtn:hover {
+  background: #fff;
+  border-color: #000;
+  color: #000;
+}
+
+.blackCallBtn:hover .ctaCallIcon {
+  filter: brightness(0) !important;
 }
 
 @media (max-width: 576px) {
@@ -766,25 +882,45 @@ img {
 }
 
 .enquirePopupWrapper .closed {
+
   position: absolute;
+
   top: 12px;
+
   right: 12px;
+
   z-index: 1;
+
   width: 34px;
+
   height: 34px;
+
   border: 1px solid rgba(26, 26, 26, 0.16);
+
   background: #fff;
+
   color: var(--color-lodha-dark);
+
   font-family: var(--font-jost);
+
   font-size: 18px;
+
   line-height: 1;
+
   cursor: pointer;
+
   transition: background 0.3s ease, color 0.3s ease;
+
 }
 
+
+
 .enquirePopupWrapper .closed:hover {
+
   background: var(--color-lodha-dark);
+
   color: #fff;
+
 }
 
 .enquirePopupWrapper .headingH1 {
@@ -1192,18 +1328,31 @@ footer .container {
   width: 18px;
   height: 18px;
 }
+
 .stickyEnquireBtn {
+
   width: min(320px, calc(100vw - 32px));
+
   padding: 12px 18px;
+
   border: 1px solid #000;
+
   border-radius: 4px;
+
   background: #000;
+
   color: #fff;
+
   font-family: var(--font-jost);
+
   font-size: 14px;
+
   font-weight: 600;
+
   letter-spacing: 0.5px;
+
   cursor: pointer;
+
 }
 
 .stickyHeader.is-hidden {
@@ -1330,6 +1479,8 @@ footer .container {
   .spotlightBanner {
     height: 100vh;
   }
+
+
 
 .desktopImg {
     display: none;
@@ -1478,6 +1629,7 @@ footer .container {
     aspect-ratio: 1 / 1.2;
   }
 }
+
 
 .locationIntro {
   max-width: 760px;
@@ -1712,5 +1864,122 @@ footer .container {
   .lifestyleTextCol .section-desc {
     font-size: 15px;
     line-height: 1.55;
+  }
+}
+
+
+/* Landing enquiry form */
+.landingEnquirySec {
+  padding: 70px 0;
+  background: #fff;
+}
+
+.landingEnquirySec .container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.landingEnquiryWrap {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(320px, 1.2fr);
+  gap: 40px;
+  align-items: center;
+  border-top: 1px solid rgba(26, 26, 26, 0.12);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.12);
+  padding: 36px 0;
+}
+
+.landingEnquiryText .section-label {
+  display: block;
+  margin-bottom: 10px;
+  font-family: var(--font-jost);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-lodha-gold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.landingEnquiryText .headingH1 {
+  font-family: var(--font-cormorant);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-lodha-dark);
+}
+
+.landingEnquiryForm {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.landingEnquiryForm .whatsappOptIn {
+  margin: 0;
+}
+
+.landingSubmitBtn {
+  margin: 0;
+}
+
+.whatsappOptIn label {
+  font-size: 13px;
+  color: var(--color-lodha-dark);
+}
+
+.floatingWhatsApp {
+  position: fixed;
+  right: 22px;
+  bottom: 92px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floatingWhatsApp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+}
+
+.floatingWhatsApp svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+
+@media (max-width: 768px) {
+  .landingEnquirySec {
+    padding: 48px 0;
+  }
+
+  .landingEnquiryWrap,
+  .landingEnquiryForm {
+    grid-template-columns: 1fr;
+  }
+
+  .landingEnquiryWrap {
+    gap: 24px;
+    padding: 28px 0;
+  }
+
+  .landingEnquiryText .headingH1 {
+    font-size: 30px;
+  }
+
+  .floatingWhatsApp {
+    right: 16px;
+    bottom: 84px;
+    width: 50px;
+    height: 50px;
   }
 }
