@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-import SectionNav from '../components/SectionNav';
 import AboutSections from '../components/AboutSections';
 import LocationSection from '../components/LocationSection';
 import LandingEnquiryForm from '../components/LandingEnquiryForm';
@@ -23,7 +22,6 @@ const LodhaAlibaug = () => {
       <Header onEnquireClick={openEnquiry} />
       <main>
         <Hero />
-        <SectionNav />
         <AboutSections />
         <LocationSection />
         <LandingEnquiryForm
