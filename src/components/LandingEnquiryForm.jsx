@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { submitEnquiry } from '../utils/submitEnquiry';
 
-const LandingEnquiryForm = () => {
+const LandingEnquiryForm = ({
+  id = 'enquire',
+  eyebrow = 'Early Access Now Live',
+  heading = 'Limited Units at Pre-Launch Pricing',
+}) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -33,11 +37,11 @@ const LandingEnquiryForm = () => {
   };
 
   return (
-    <div className="landingEnquirySec" id="enquire">
+    <div className="landingEnquirySec" id={id}>
         <div className="landingEnquiryWrap">
           <div className="landingEnquiryText">
-            <span className="section-label">Early Access Now Live</span>
-            <h2 className="headingH1">Limited Units at Pre-Launch Pricing</h2>
+            <span className="section-label">{eyebrow}</span>
+            <h2 className="headingH1">{heading}</h2>
           </div>
           <form className="landingEnquiryForm" onSubmit={handleSubmit}>
             <div className="formControls">

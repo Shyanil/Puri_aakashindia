@@ -1796,18 +1796,23 @@ footer .container {
 }
 
 
-/* Early-access enquiry form */
+/* Early-access enquiry forms */
 .landingEnquirySec {
-  width: 100%;
-  margin: 48px auto 36px;
+  width: calc(100% - 40px);
+  max-width: 1280px;
+  margin: 48px auto 40px;
   padding: 0;
   text-align: left;
 }
 
+.ourStorySec .landingEnquirySec {
+  width: 100%;
+}
+
 .landingEnquiryWrap {
   display: grid;
-  grid-template-columns: minmax(300px, 0.75fr) minmax(560px, 1.25fr);
-  gap: 110px;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(40px, 7vw, 100px);
   align-items: center;
 }
 
@@ -1823,19 +1828,12 @@ footer .container {
 }
 
 .landingEnquiryText .headingH1 {
-  margin: 0 0 8px;
+  margin: 0;
   font-family: var(--font-cormorant);
-  font-size: 34px;
+  font-size: clamp(30px, 3vw, 38px);
   font-weight: 500;
   line-height: 1.12;
   color: var(--color-lodha-dark);
-}
-
-.landingEnquiryText p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
-  color: rgba(26, 26, 26, 0.68);
 }
 
 .landingEnquiryForm {
@@ -1843,16 +1841,23 @@ footer .container {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   align-items: start;
+  min-width: 0;
 }
 
 .landingEnquiryForm .formControls {
+  min-width: 0;
   margin: 0;
+}
+
+.landingEnquiryForm .formControls input {
+  width: 100%;
 }
 
 .landingSubmitBtn {
   width: 100%;
   margin: 0;
 }
+
 .floatingWhatsApp {
   position: fixed;
   right: 22px;
@@ -1881,22 +1886,24 @@ footer .container {
   fill: currentColor;
 }
 
-@media (max-width: 768px) {
-  .landingEnquirySec {
-  width: 100%;
-  margin: 36px auto 28px;
-  padding: 0;
-  text-align: left;
+@media (max-width: 900px) {
+  .landingEnquiryWrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
 
-  .landingEnquiryWrap,
-  .landingEnquiryForm {
-    grid-template-columns: 1fr;
+@media (max-width: 576px) {
+  .landingEnquirySec {
+    margin: 36px auto 30px;
   }
 
-  .landingEnquiryWrap {
-    gap: 24px;
-    padding: 0;
+  .ourStorySec .landingEnquirySec {
+    width: 100%;
+  }
+
+  .landingEnquiryForm {
+    grid-template-columns: 1fr;
   }
 
   .landingEnquiryText .headingH1 {
