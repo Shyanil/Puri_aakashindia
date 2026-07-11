@@ -51,6 +51,7 @@ const Header = ({ onEnquireClick }) => {
               <ul className="linksUl">
                 <li><a href="https://aakashindia.in/about-us/">About us</a></li>
                 <li><a href="https://aakashindia.in/portfolio/">Projects</a></li>
+                <li><a href="#location">Location</a></li>
               </ul>
 
               <ul className="staticlinksUl">
@@ -107,6 +108,11 @@ const Header = ({ onEnquireClick }) => {
           <li>
             <a href="https://aakashindia.in/portfolio/" onClick={() => setMobileMenuOpen(false)}>
               Projects
+            </a>
+          </li>
+          <li>
+            <a href="#location" onClick={() => setMobileMenuOpen(false)}>
+              Location
             </a>
           </li>
           <li className="mobileMenuCallLi">

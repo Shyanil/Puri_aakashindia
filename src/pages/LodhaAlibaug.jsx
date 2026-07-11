@@ -29,7 +29,7 @@ const LodhaAlibaug = () => {
         <LandingEnquiryForm
           id="location-enquire"
           eyebrow="Priority Registrations Open"
-          heading="Schedule Your Private Project Consultation"
+          heading="Enquire now to avail exciting offers!"
         />
         {/* <FinestDevelopments /> */}
         <Breadcrumb />
