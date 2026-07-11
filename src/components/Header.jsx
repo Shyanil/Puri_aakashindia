@@ -49,7 +49,7 @@ const Header = ({ onEnquireClick }) => {
             {/* Desktop Nav + Action Buttons */}
             <div className="linksDiv">
               <ul className="linksUl">
-                <li><a href="https://aakashindia.in/about-us/">About us</a></li>
+                <li><a href="https://aakashindia.in/about-us/">Our Story</a></li>
                 <li><a href="https://aakashindia.in/portfolio/">Projects</a></li>
                 <li><a href="#location">Location</a></li>
               </ul>
@@ -102,7 +102,7 @@ const Header = ({ onEnquireClick }) => {
         <ul>
           <li>
             <a href="https://aakashindia.in/about-us/" onClick={() => setMobileMenuOpen(false)}>
-              About us
+              Our Story
             </a>
           </li>
           <li>
