@@ -35,11 +35,11 @@ const getLeadTrackingFields = () => {
   };
 };
 
-export const submitEnquiry = async ({ name, phone, whatsappOptIn, source }) => {
+export const submitEnquiry = async ({ name, phone, email, source }) => {
   const payload = new URLSearchParams({
     name,
     phone,
-    whatsapp_opt_in: whatsappOptIn ? 'Yes' : 'No',
+    email,
     source,
     project: 'Aakash India Puri',
     ...getLeadTrackingFields(),

@@ -5,15 +5,15 @@ const EnquiryForm = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    whatsappOptIn: false,
+    email: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: value,
     }));
   };
 
@@ -24,7 +24,7 @@ const EnquiryForm = ({ isOpen, onClose }) => {
     try {
       await submitEnquiry({ ...formData, source: 'Popup Enquiry Form' });
       alert('Thank you for your enquiry!');
-      setFormData({ name: '', phone: '', whatsappOptIn: false });
+      setFormData({ name: '', phone: '', email: '' });
       onClose();
     } catch {
       alert('Something went wrong. Please try again.');
@@ -70,15 +70,16 @@ const EnquiryForm = ({ isOpen, onClose }) => {
                 autoComplete="tel"
               />
             </div>
-            <div className="formControlsCheck whatsappOptIn">
+            <div className="formControls">
               <input
-                type="checkbox"
-                id="popup-whatsapp-opt-in"
-                name="whatsappOptIn"
-                checked={formData.whatsappOptIn}
+                type="email"
+                name="email"
+                placeholder="Email Address*"
+                required
+                value={formData.email}
                 onChange={handleChange}
+                autoComplete="email"
               />
-              <label htmlFor="popup-whatsapp-opt-in">Send updates on WhatsApp</label>
             </div>
             <button type="submit" className="submitBtn" disabled={isSubmitting}>
               {isSubmitting ? 'Submitting...' : 'Enquire Now'}

@@ -5,15 +5,15 @@ const LandingEnquiryForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    whatsappOptIn: false,
+    email: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: value,
     }));
   };
 
@@ -24,7 +24,7 @@ const LandingEnquiryForm = () => {
     try {
       await submitEnquiry({ ...formData, source: 'Landing Page Inline Form' });
       alert('Thank you for your enquiry!');
-      setFormData({ name: '', phone: '', whatsappOptIn: false });
+      setFormData({ name: '', phone: '', email: '' });
     } catch {
       alert('Something went wrong. Please try again.');
     } finally {
@@ -33,12 +33,11 @@ const LandingEnquiryForm = () => {
   };
 
   return (
-    <section className="landingEnquirySec" id="enquire">
-      <div className="container">
+    <div className="landingEnquirySec" id="enquire">
         <div className="landingEnquiryWrap">
           <div className="landingEnquiryText">
-            <span className="section-label">Enquire Now</span>
-            <h2 className="headingH1">Request a call back</h2>
+            <span className="section-label">Early Access Now Live</span>
+            <h2 className="headingH1">Limited Units at Pre-Launch Pricing</h2>
           </div>
           <form className="landingEnquiryForm" onSubmit={handleSubmit}>
             <div className="formControls">
@@ -65,23 +64,23 @@ const LandingEnquiryForm = () => {
                 autoComplete="tel"
               />
             </div>
-            <div className="formControlsCheck whatsappOptIn">
+            <div className="formControls">
               <input
-                type="checkbox"
-                id="landing-whatsapp-opt-in"
-                name="whatsappOptIn"
-                checked={formData.whatsappOptIn}
+                type="email"
+                name="email"
+                placeholder="Email Address*"
+                required
+                value={formData.email}
                 onChange={handleChange}
+                autoComplete="email"
               />
-              <label htmlFor="landing-whatsapp-opt-in">Send updates on WhatsApp</label>
             </div>
             <button type="submit" className="submitBtn landingSubmitBtn" disabled={isSubmitting}>
               {isSubmitting ? 'Submitting...' : 'Enquire Now'}
             </button>
           </form>
         </div>
-      </div>
-    </section>
+    </div>
   );
 };
 
