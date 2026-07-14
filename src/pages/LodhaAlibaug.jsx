@@ -4,12 +4,12 @@ import Hero from '../components/Hero';
 import AboutSections from '../components/AboutSections';
 import LocationSection from '../components/LocationSection';
 import LandingEnquiryForm from '../components/LandingEnquiryForm';
-import FloatingWhatsApp from '../components/FloatingWhatsApp';
 // import FinestDevelopments from '../components/FinestDevelopments';
 import Breadcrumb from '../components/Breadcrumb';
 import EnquiryForm from '../components/EnquiryForm';
 import Footer from '../components/Footer';
 import StickyMobileFooter from '../components/StickyMobileFooter';
+import FloatingWhatsApp from '../components/FloatingWhatsApp';
 
 const LodhaAlibaug = () => {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
@@ -33,9 +33,9 @@ const LodhaAlibaug = () => {
         <Breadcrumb />
         <EnquiryForm isOpen={enquiryOpen} onClose={closeEnquiry} />
         <StickyMobileFooter onEnquireClick={openEnquiry} />
-        <FloatingWhatsApp />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </>
   );
 };
