@@ -1,63 +1,16 @@
-import { useEffect, useRef } from 'react';
-
 const Hero = () => {
-  const videoRef = useRef(null);
-  const heroVideoSrc = `${import.meta.env.BASE_URL}assets/hero-video.mp4`;
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return undefined;
-
-    const playWithSound = () => {
-      video.muted = false;
-      video.volume = 1;
-      video.play().catch(() => {
-        video.muted = true;
-        video.play().catch(() => {});
-      });
-    };
-
-    video.currentTime = 0;
-    playWithSound();
-
-    const enableSound = () => {
-      video.muted = false;
-      video.volume = 1;
-      video.play().catch(() => {});
-      window.removeEventListener('pointerdown', enableSound);
-      window.removeEventListener('keydown', enableSound);
-      window.removeEventListener('touchstart', enableSound);
-    };
-
-    const keepPlaying = window.setInterval(() => {
-      video.play().catch(() => {});
-    }, 3000);
-
-    window.addEventListener('pointerdown', enableSound, { once: true });
-    window.addEventListener('keydown', enableSound, { once: true });
-    window.addEventListener('touchstart', enableSound, { once: true });
-
-    return () => {
-      window.clearInterval(keepPlaying);
-      window.removeEventListener('pointerdown', enableSound);
-      window.removeEventListener('keydown', enableSound);
-      window.removeEventListener('touchstart', enableSound);
-    };
-  }, []);
+  const youtubeVideoId = 'vX9HMkxZzh8';
+  const youtubeEmbedUrl = `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=1&loop=1&playlist=${youtubeVideoId}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1`;
 
   return (
-    <section className='spotlightBanner' aria-label='Aakash India Puri hero video'>
-      <video
-        ref={videoRef}
-        className='heroVideoFrame'
-        src={heroVideoSrc}
-        autoPlay
-        loop
-        playsInline
-        preload='auto'
-        controls={false}
-        controlsList='nodownload noplaybackrate nofullscreen'
-        disablePictureInPicture
+    <section className="spotlightBanner" aria-label="Aakash India Puri hero video">
+      <iframe
+        className="heroVideoFrame"
+        src={youtubeEmbedUrl}
+        title="Aakash India Puri hero video"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
       />
     </section>
   );
