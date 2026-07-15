@@ -35,7 +35,7 @@ const AboutSections = () => {
                     <polyline points="9 22 9 12 15 12 15 22" />
                   </svg>
                 </div>
-                <span>689 Apartments</span>
+                <span>687 Apartments</span>
               </div>
 
               <div className="about-stat-item">
